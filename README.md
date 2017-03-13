@@ -340,4 +340,381 @@ Answer:
 
 Sealed classes are used to restrict the inheritance feature of object oriented programming. Once a class is defined as a sealed class, the class cannot be inherited. 
 
-In C#, the sealed modifier is used to define a cla
+In C#, the sealed modifier is used to define a class as sealed. In Visual Basic .NET the Not Inheritable keyword serves the purpose of sealed. If a class is derived from a sealed class then the compiler throws an error. 
+
+If you have ever noticed, structs are sealed. You cannot derive a class from a struct. 
+
+The following class definition defines a sealed class in C#: 
+// Sealed class  
+sealed class SealedClass  
+{  
+  
+}  
+Read continue for more details by the following link:
+Sealed Class in C#
+Sealed Class in C#
+18. What are partial classes?
+
+Answer: 
+
+A partial class is only use to splits the definition of a class in two or more classes in a same source code file or more than one source files. You can create a class definition in multiple files but it will be compiled as one class at run time and also when you’ll create an instance of this class so you can access all the methods from all source file with a same object.
+
+Partial Classes can be create in the same namespace it’s doesn’t allowed to create a partial class in different namespace. So use “partial” keyword with all the class name which you want to bind together with the same name of class in same namespace, let’s have an example:
+
+
+
+For more go with following link:
+
+Partial Classes in C# With Real Example
+Partial Class in C#
+19. What is boxing and unboxing?
+
+Answer: 
+
+Boxing and Unboxing both using for type converting but have some difference:
+
+Boxing:
+
+Boxing is the process of converting a value type data type to the object or to any interface data type which is implemented by this value type. When the CLR boxes a value means when CLR converting a value type to Object Type, it wraps the value inside a System.Object and stores it on the heap area in application domain. 
+
+Example:
+
+
+
+Unboxing:
+
+Unboxing is also a process which is use to extracts the value type from the object or any implemented interface type. Boxing may be done implicit but unboxing have to be explicit by code. 
+
+Example:
+
+
+
+The concept of boxing and unboxing underlies the C# unified view of the type system in which a value of any type can be treated as an object.
+
+For more details:
+
+Boxing and Unboxing
+20. What is IEnumerable<> in c#? 
+
+Answer: 
+
+IEnumerable is the parent interface for all non-generic collections in System.Collections namespace like ArrayList, HastTable etc. that can be enumerated. For the generic version of this interface as IEnumerable<T> which a parent interface of all generic collections class in System.Collections.Generic namespace like List<> and more. 
+
+In System.Collections.Generic.IEnumerable<T> have only a single method which is GetEnumerator() that returns an IEnumerator. IEnumerator provides the power to iterate through the collection by exposing a Current property and Move Next and Reset methods, if we doesn’t have this interface as a parent so we can’t use iteration by foreach loop or can’t use that class object in our LINQ query.
+
+
+
+For more details go with following link:
+
+Implement IEnumerable Interface in C#
+IEnumerable Interface in C#
+21. What is difference between late binding and early binding in c#?
+
+Answer: 
+
+Early Binding and Late Binding concepts belongs to polymorphism so let’s see first about polymorphism:
+
+Polymorphism is an ability to take more than one form of a function means with a same name we can write multiple functions code in a same class or any derived class.
+
+Polymorphism we have 2 different types to achieve that:
+
+Compile Time also known as Early Binding or Overloading.
+Run Time also known as Late Binding or Overriding.
+Compile Time Polymorphism or Early Binding:
+
+In Compile time polymorphism or Early Binding we will use multiple methods with same name but different type of parameter or may be the number or parameter because of this we can perform different-different tasks with same method name in the same class which is also known as Method overloading.
+
+See how we can do that by the following example:
+
+
+
+Run Time Polymorphism or Late Binding:
+
+Run time polymorphism also known as late binding, in Run Time polymorphism or Late Binding we can do use same method names with same signatures means same type or same number of parameters but not in same class because compiler doesn’t allowed that at compile time so we can use in derived class that bind at run time when a child class or derived class object will instantiated that’s way we says that Late Binding. For that we have to create my parent class functions as partial and in driver or child class as override functions with override keyword. 
+
+Like as following example:
+
+
+Understanding Polymorphism in C#
+Polymorphism in .NET
+22. What are the differences between IEnumerable and IQueryable?
+
+Answer: 
+
+Before the differences learn what is IEnumerable and IQueryable.
+
+IEnumerable:
+
+Is the parent interface for all non-generic collections in System.Collections namespace like ArrayList, HastTable etc. that can be enumerated. For the generic version of this interface as IEnumerable<T> which a parent interface of all generic collections class in System.Collections.Generic namespace like List<> and more. 
+
+IQueryable:
+
+As per MSDN IQueryable interface is intended for implementation by query providers. It is only supposed to be implemented by providers that also implement IQueryable<T>. If the provider does not also implement IQueryable<T>, the standard query operators cannot be used on the provider's data source.
+
+The IQueryable interface inherits the IEnumerable interface so that if it represents a query, the results of that query can be enumerated. Enumeration causes the expression tree associated with an IQueryable object to be executed. The definition of "executing an expression tree" is specific to a query provider. For example, it may involve translating the expression tree to an appropriate query language for the underlying data source. Queries that do not return enumerable results are executed when the Execute method is called.
+
+
+IEnumerable vs IQuerable
+IEnumerable Vs IQueryable
+23. What happens if the inherited interfaces have conflicting method names?
+
+Answer: 
+
+If we implement multipole interface in the same class with conflict method name so we don’t need to define all or in other words we can say if we have conflict methods in same class so we can’t implement their body independently in the same class coz of same name and same signature so we have to use interface name before method name to remove this method confiscation let’s see an example:
+interface testInterface1 {  
+    void Show();  
+}  
+interface testInterface2 {  
+    void Show();  
+}  
+class Abc: testInterface1,  
+testInterface2 {  
+  
+    void testInterface1.Show() {  
+        Console.WriteLine("For testInterface1 !!");  
+    }  
+    void testInterface2.Show() {  
+        Console.WriteLine("For testInterface2 !!");  
+    }  
+}  
+Now see how to use those in a class:
+class Program {  
+    static void Main(string[] args) {  
+        testInterface1 obj1 = new Abc();  
+        testInterface1 obj2 = new Abc();  
+        obj1.Show();  
+        obj2.Show();  
+  
+        Console.ReadLine();  
+    }  
+}  
+Output:
+
+
+
+For one more example follow the link:
+Inherit Multiple Interfaces and They have Conflicting Method Name
+24. What are the Arrays in C#.Net?
+
+Answer: 
+
+Arrays are powerful data structures for solving many programming problems. You saw during the creation of variables of many types that they have one thing in common, they hold information about a single item, for instance an integer, float and string type and so on. So what is the solution if you need to manipulate sets of items? One solution would be to create a variable for each item in the set but again this leads to a different problem. How many variables do you need? 
+
+So in this situation Arrays provide mechanisms that solves problem posed by these questions. An array is a collection of related items, either value or reference type. In C# arrays are immutable such that the number of dimensions and size of the array are fixed. 
+
+Arrays Overview
+
+An array contains zero or more items called elements. An array is an unordered sequence of elements. All the elements in an array are of the same type (unlike fields in a class that can be of different types). The elements of an array accessed using an integer index that always starts from zero. C# supports single-dimensional (vectors), multidimensional and jagged arrays. 
+
+Elements are identified by indexes relative to the beginning of the arrays. An index is also commonly called indices or subscripts and are placed inside the indexing operator ([]). Access to array elements is by their index value that ranges from 0 to (length-1).
+
+Array Properties
+
+The length cannot be changed once created.
+Elements are initialized to default values.
+Arrays are reference types and are instances of System.Array.
+Their number of dimensions or ranks can be determined by the Rank property.
+An array length can be determined by the GetLength() method or Length property.
+For more detail follow the link:
+
+Overview of Arrays in C#
+Doing Arrays - C#
+25. What is the Constructor Chaining in C#?
+
+Answer: constructor chaining is a way to connect two or more classes in a relationship as Inheritance, in Constructor Chaining every child class constructor is mapped to parent class Constructor implicitly by base keyword so when you create an instance of child class to it’ll call parent’s class Constructor without it inheritance is not possible.
+
+For more example follow the link:
+
+Constructor Chaining In C#
+Constructors In C#
+26. What’s the difference between the System.Array.CopyTo() and System.Array.Clone()?
+
+Answer: 
+
+Clone: 
+
+Method creates a shallow copy of an array. A shallow copy of an Array copies only the elements of the Array, whether they are reference types or value types, but it does not copy the objects that the references refer to. The references in the new Array point to the same objects that the references in the original Array point to.
+
+CopyTo:
+
+The Copy static method of the Array class copies a section of an array to another array. The CopyTo method copies all the elements of an array to another one-dimension array. The code listed in Listing 9 copies contents of an integer array to an array of object types. 
+
+To learn about arrays go with following link:
+
+Working with Arrays in C#
+27. Can Multiple Catch Blocks executed in c#?
+
+Answer: 
+
+we can use multiple Catches block with every try but when any Exceptions is throw by debugger so every catches match this exception type with their signature and catch the exception by any single catch block so that means we can use multiple catches blocks but only one can executed at once like:
+using System;  
+class MyClient {  
+    public static void Main() {  
+        int x = 0;  
+        int div = 0;  
+        try {  
+            div = 100 / x;  
+            Console.WriteLine("Not executed line");  
+        } catch (DivideByZeroException de) {  
+            Console.WriteLine("DivideByZeroException");  
+        } catch (Exception ee) {  
+            Console.WriteLine("Exception");  
+        } finally {  
+            Console.WriteLine("Finally Block");  
+        }  
+        Console.WriteLine("Result is {0}", div);  
+    }  
+}  
+To learn more about Exception Handling following link:
+Exception Handling in C#
+28. What is Singleton Design Patterns and How to implement in C#?
+
+Answer: 
+
+What is Singleton Design Pattern?
+
+Ensures a class has only one instance and provides a global point of access to it.
+A singleton is a class that only allows a single instance of itself to be created, and usually gives simple access to that instance.
+Most commonly, singletons don't allow any parameters to be specified when creating the instance, since a second request of an instance with a different parameter could be problematic! (If the same instance should be accessed for all requests with the same parameter then the factory pattern is more appropriate.)
+There are various ways to implement the Singleton Pattern in C#. The following are the common characteristics of a Singleton Pattern.
+
+• A single constructor, that is private and parameterless.
+• The class is sealed.
+• A static variable that holds a reference to the single created instance, if any.
+• A public static means of getting the reference to the single created instance, creating one if necessary.
+This is the example how to write the code with Singleton:
+namespace Singleton {  
+    class Program {  
+        static void Main(string[] args) {  
+            Calculate.Instance.ValueOne = 10.5;  
+            Calculate.Instance.ValueTwo = 5.5;  
+            Console.WriteLine("Addition : " + Calculate.Instance.Addition());  
+            Console.WriteLine("Subtraction : " + Calculate.Instance.Subtraction());  
+            Console.WriteLine("Multiplication : " + Calculate.Instance.Multiplication());  
+            Console.WriteLine("Division : " + Calculate.Instance.Division());  
+  
+            Console.WriteLine("\n----------------------\n");  
+  
+            Calculate.Instance.ValueTwo = 10.5;  
+            Console.WriteLine("Addition : " + Calculate.Instance.Addition());  
+            Console.WriteLine("Subtraction : " + Calculate.Instance.Subtraction());  
+            Console.WriteLine("Multiplication : " + Calculate.Instance.Multiplication());  
+            Console.WriteLine("Division : " + Calculate.Instance.Division());  
+  
+            Console.ReadLine();  
+        }  
+    }  
+  
+    public sealed class Calculate {  
+        private Calculate() {}  
+        private static Calculate instance = null;  
+        public static Calculate Instance {  
+            get {  
+                if (instance == null) {  
+                    instance = new Calculate();  
+                }  
+                return instance;  
+            }  
+        }  
+  
+        public double ValueOne {  
+            get;  
+            set;  
+        }  
+        public double ValueTwo {  
+            get;  
+            set;  
+        }  
+  
+        public double Addition() {  
+            return ValueOne + ValueTwo;  
+        }  
+  
+        public double Subtraction() {  
+            return ValueOne - ValueTwo;  
+        }  
+  
+        public double Multiplication() {  
+            return ValueOne * ValueTwo;  
+        }  
+  
+        public double Division() {  
+            return ValueOne / ValueTwo;  
+        }  
+    }  
+}  
+To read more about Singleton in depth so follow the link:
+Singleton Design Pattern in C#
+Implementing Singleton Design Patterns
+29. Difference between Throw Exception and Throw Clause. 
+
+Answer: 
+
+The basic difference is that the Throw exception overwrites the stack trace and this makes it hard to find the original code line number that has thrown the exception.
+
+Throw basically retains the stack information and adds to the stack information in the exception that it is thrown.
+
+Let us see what it means rather speaking so many words to better understand the differences. I am using a console application to easily test and see how the usage of the two differ in their functionality.
+using System;  
+using System.Collections.Generic;  
+using System.Linq;  
+using System.Text;  
+  
+namespace TestingThrowExceptions {  
+    class Program {  
+        public void ExceptionMethod() {  
+            throw new Exception("Original Exception occurred in ExceptionMethod");  
+  
+        }  
+  
+        static void Main(string[] args) {  
+            Program p = new Program();  
+            try {  
+                p.ExceptionMethod();  
+            } catch (Exception ex) {  
+  
+                throw ex;  
+            }  
+        }  
+    }  
+}  
+Now run the code by pressing the F5 key of the keyboard and see what happens. It returns an exception and look at the stack trace:
+
+For More Details use following link:
+Difference Between Throw Exception and Throw Clause
+30. What are Indexer in C# .Net?
+
+Answer: 
+
+Indexer allows classes to be used in more intuitive manner. C# introduces a new concept known as Indexers which are used for treating an object as an array. The indexers are usually known as smart arrays in C#. They are not essential part of object-oriented programming.
+
+An indexer, also called an indexed property, is a class property that allows you to access a member variable of a class using the features of an array.
+
+Defining an indexer allows you to create classes that act like virtual arrays. Instances of that class can be accessed using the [] array access operator.
+
+Creating an Indexer
+< modifier > <  
+return type > this[argument list] {  
+    get {  
+        // your get block code  
+    }  
+  
+    set {  
+        // your set block code  
+    }  
+}  
+In the above code:
+
+<modifier>
+
+can be private, public, protected or internal.
+
+<return type>
+
+can be any valid C# types.
+
+For more details use following link:
+Indexers in C#
+INDEXER in C#
+31. What is multicast delegate in c#?
+
