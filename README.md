@@ -1,8 +1,6 @@
 # Iterview
 
-What is the difference between Interface and Abstract Class?
-
-Answer: 
+###What is the difference between Interface and Abstract Class?
 
 Theoretically their are some differences between Abstract Class and Interface which are listed below:
 
@@ -15,11 +13,9 @@ An abstract class can’t be used for multiple inheritance while interface can b
 An abstract class use constructor while in an interface we don’t have any type of constructor.
 To know more about the difference between Abstract Class and Interface go to the following link:
 
-Abstract Class vs Interface
-Explore Interface Vs Abstract Class
-7. What is enum in C#?
 
-Answer: 
+### What is enum in C#?
+
 
 An enum is a value type with a set of related named constants often referred to as an enumerator list. The enum keyword is used to declare an enumeration. It is a primitive data type, which is user defined.
 
@@ -40,14 +36,12 @@ Every enum type automatically derives from System.Enum and thus we can use Syste
 Enums are value types and are created on the stack and not on the heap.
 For more details follow the link:
 
-Enums in C#
-Enumeration In C#
-8. What is the difference between “continue” and “break” statements in C#?
 
-Answer: 
+### What is the difference between “continue” and “break” statements in C#?
+
 
 Using break statement, you can 'jump out of a loop' whereas by using continue statement, you can 'jump over one iteration' and then resume your loop execution.
-
+```C#
 Eg. Break Statement 
 using System;  
 using System.Collections;  
@@ -111,22 +105,17 @@ The number is 1;
 The number is 2;
 The number is 3;
 The number is 5; 
+```
 
-For more details follow link:
+### What is the difference between constant and read only in c#?
 
-Difference Between Break Statement and Continue Statement in C#
-Break and Continue Statements in C#
-9. What is the difference between constant and read only in c#?
-
-Answer: 
 
 Constant (const) and Readonly (readonly) both looks like same as per the uses but they have some differences: 
 
 Constant is known as “const” keyword in C# which is also known immutable values which are known at compile time and do not change their values at run time like in any function or constructor for the life of application till the application is running.
 
 Readonly is known as “readonly” keyword in C# which is also known immutable values and are known at compile and run time and do not change their values at run time like in any function for the life of application till the application is running. You can assay their value by constructor when we call constructor with “new” keyword.
-
-See the example
+```C#
 
 We have a Test Class in which we have two variables one is readonly and another is constant.
 class Test {  
@@ -141,6 +130,7 @@ class Test {
         Console.WriteLine("const : {0}", cons);  
     }  
 }  
+```
 Here I was trying to change the value of both the variables in constructor but when I am trying to change the constant it gives an error to change their value in that block which have to call at run time.
 
 
@@ -168,24 +158,9 @@ Output:
 
 
 
-To know more go to the following link:
-Difference Between Const, ReadOnly and Static ReadOnly in C#
-Constant VS ReadOnly In C#
-10. What is the difference between ref and out keywords?
 
-Answer: 
+### Can “this” be used within a static method?
 
-In C Sharp (C#) we can have three types of parameters in a function. The parameters can be in parameter (which is not returned back to the caller of the function), out parameter and ref parameter. We have lots of differences in both of them.
-
-
-
-For more details go to the following link:
-
-Ref Vs Out Keywords in C#
-Ref And Out Keywords in C#
-11. Can “this” be used within a static method?
-
-Answer: 
 
 We can't use this in static method because keyword 'this' returns a reference to the current instance of the class containing it. Static methods (or any static member) do not belong to a particular instance. They exist without creating an instance of the class and call with the name of a class not by instance so we can’t use this keyword in the body of static Methods, but in case of Extension Methods we can use it the functions parameters. Let’s have a look on “this” keyword.
 
@@ -195,9 +170,9 @@ For more follow this link:
 
 "this" Keyword in C#
 this keyword in C#
-12. Define Property in C#.net?
 
-Answer:
+###Define Property in C#.net?
+
 
 Properties are members that provide a flexible mechanism to read, write or compute the values of private fields, in other words by the property we can access private fields. In other words we can say that a property is a return type function/method with one parameter or without a parameter. These are always public data members. It uses methods to access and assign values to private fields called accessors.
 
