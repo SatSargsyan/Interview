@@ -136,6 +136,7 @@ Here I was trying to change the value of both the variables in constructor but w
 
 
 So finally remove that line of code from class and call this Check() function like the following code snippet:
+```C#
 class Program {  
     static void Main(string[] args) {  
         Test obj = new Test();  
@@ -153,7 +154,8 @@ class Test {
         Console.WriteLine("Read only : {0}", read);  
         Console.WriteLine("const : {0}", cons);  
     }  
-}  
+}
+```
 Output:
 
 
