@@ -1,6 +1,6 @@
 # Iterview
 
-###What is the difference between Interface and Abstract Class?
+### What is the difference between Interface and Abstract Class?
 
 Theoretically their are some differences between Abstract Class and Interface which are listed below:
 
@@ -184,13 +184,9 @@ We have the three types of properties
 Read/Write.
 ReadOnly.
 WriteOnly
-For more details follow the link:
 
-Property in C#
-Properties In C#
-13. What is extension method in c# and how to use them?
 
-Answer: 
+### What is extension method in c# and how to use them?
 
 Extension methods enable you to add methods to existing types without creating a new derived type, recompiling, or otherwise modifying the original type. An extension method is a special kind of static method, but they are called as if they were instance methods on the extended type.
 
@@ -258,10 +254,8 @@ It belongs to IDisposable interface.
 Implement this when you are writing a custom class that will be used by other users.
 For more details follow this link:
 
-Back To Basics - Dispose Vs Finalize
-15. What is the difference between string and StringBuilder in c#?
 
-Answer: 
+### What is the difference between string and StringBuilder in c#?
 
 StringBuilder and string both use to store string value but both have many differences on the bases of instance creation and also for performance:
 
@@ -291,11 +285,7 @@ Performance wise StringBuilder is very fast because it will use same instance of
 StringBuilder belongs to System.Text.Stringbuilder namespace.
 For More details read this article by following link:
 
-Comparison of String and StringBuilder in C#
-String and StringBuilder Classes
-16. What is delegates in C# and uses of delegates?
-
-Answer: 
+### What is delegates in C# and uses of delegates?
 
 C# delegates are same as pointers to functions, in C or C++. A delegate Object is a reference type variable that use to holds the reference to a method. The reference can be changed at runtime which is hold by an object of delegate, a delegate object can hold many functions reference which is also known as Invocation List that refers functions in a sequence FIFO, we can new functions ref in this list at run time by += operator and can remove by -= operator. 
 
@@ -305,29 +295,6 @@ Let’s see how to use Delegate with Example:
 
 
 
-For More details read this article:
-
-C# Delegates
-Delegates in C#
-17. What is sealed class in c#?
-
-Answer: 
-
-Sealed classes are used to restrict the inheritance feature of object oriented programming. Once a class is defined as a sealed class, the class cannot be inherited. 
-
-In C#, the sealed modifier is used to define a class as sealed. In Visual Basic .NET the Not Inheritable keyword serves the purpose of sealed. If a class is derived from a sealed class then the compiler throws an error. 
-
-If you have ever noticed, structs are sealed. You cannot derive a class from a struct. 
-
-The following class definition defines a sealed class in C#: 
-// Sealed class  
-sealed class SealedClass  
-{  
-  
-}  
-Read continue for more details by the following link:
-Sealed Class in C#
-Sealed Class in C#
 18. What are partial classes?
 
 Answer: 
@@ -337,14 +304,8 @@ A partial class is only use to splits the definition of a class in two or more c
 Partial Classes can be create in the same namespace it’s doesn’t allowed to create a partial class in different namespace. So use “partial” keyword with all the class name which you want to bind together with the same name of class in same namespace, let’s have an example:
 
 
+### What is boxing and unboxing?
 
-For more go with following link:
-
-Partial Classes in C# With Real Example
-Partial Class in C#
-19. What is boxing and unboxing?
-
-Answer: 
 
 Boxing and Unboxing both using for type converting but have some difference:
 
@@ -366,26 +327,15 @@ Example:
 
 The concept of boxing and unboxing underlies the C# unified view of the type system in which a value of any type can be treated as an object.
 
-For more details:
+### What is IEnumerable<> in c#? 
 
-Boxing and Unboxing
-20. What is IEnumerable<> in c#? 
+IEnumerable is the parent interface for all non-generic collections in System.Collections namespace like ArrayList, HastTable etc. that can be enumerated. For the generic version of this interface as IEnumerable`<T>` which a parent interface of all generic collections class in System.Collections.Generic namespace like List`<>` and more. 
 
-Answer: 
-
-IEnumerable is the parent interface for all non-generic collections in System.Collections namespace like ArrayList, HastTable etc. that can be enumerated. For the generic version of this interface as IEnumerable<T> which a parent interface of all generic collections class in System.Collections.Generic namespace like List<> and more. 
-
-In System.Collections.Generic.IEnumerable<T> have only a single method which is GetEnumerator() that returns an IEnumerator. IEnumerator provides the power to iterate through the collection by exposing a Current property and Move Next and Reset methods, if we doesn’t have this interface as a parent so we can’t use iteration by foreach loop or can’t use that class object in our LINQ query.
+In System.Collections.Generic.IEnumerable`<T>` have only a single method which is GetEnumerator() that returns an IEnumerator. IEnumerator provides the power to iterate through the collection by exposing a Current property and Move Next and Reset methods, if we doesn’t have this interface as a parent so we can’t use iteration by foreach loop or can’t use that class object in our LINQ query.
 
 
 
-For more details go with following link:
-
-Implement IEnumerable Interface in C#
-IEnumerable Interface in C#
-21. What is difference between late binding and early binding in c#?
-
-Answer: 
+### What is difference between late binding and early binding in c#?
 
 Early Binding and Late Binding concepts belongs to polymorphism so let’s see first about polymorphism:
 
@@ -407,14 +357,8 @@ Run Time Polymorphism or Late Binding:
 
 Run time polymorphism also known as late binding, in Run Time polymorphism or Late Binding we can do use same method names with same signatures means same type or same number of parameters but not in same class because compiler doesn’t allowed that at compile time so we can use in derived class that bind at run time when a child class or derived class object will instantiated that’s way we says that Late Binding. For that we have to create my parent class functions as partial and in driver or child class as override functions with override keyword. 
 
-Like as following example:
+### What are the differences between IEnumerable and IQueryable?
 
-
-Understanding Polymorphism in C#
-Polymorphism in .NET
-22. What are the differences between IEnumerable and IQueryable?
-
-Answer: 
 
 Before the differences learn what is IEnumerable and IQueryable.
 
@@ -424,18 +368,17 @@ Is the parent interface for all non-generic collections in System.Collections na
 
 IQueryable:
 
-As per MSDN IQueryable interface is intended for implementation by query providers. It is only supposed to be implemented by providers that also implement IQueryable<T>. If the provider does not also implement IQueryable<T>, the standard query operators cannot be used on the provider's data source.
+As per MSDN IQueryable interface is intended for implementation by query providers. It is only supposed to be implemented by providers that also implement IQueryable `<T>`. If the provider does not also implement IQueryable`<T>`, the standard query operators cannot be used on the provider's data source.
 
 The IQueryable interface inherits the IEnumerable interface so that if it represents a query, the results of that query can be enumerated. Enumeration causes the expression tree associated with an IQueryable object to be executed. The definition of "executing an expression tree" is specific to a query provider. For example, it may involve translating the expression tree to an appropriate query language for the underlying data source. Queries that do not return enumerable results are executed when the Execute method is called.
 
 
-IEnumerable vs IQuerable
-IEnumerable Vs IQueryable
-23. What happens if the inherited interfaces have conflicting method names?
+### What happens if the inherited interfaces have conflicting method names?
 
-Answer: 
 
 If we implement multipole interface in the same class with conflict method name so we don’t need to define all or in other words we can say if we have conflict methods in same class so we can’t implement their body independently in the same class coz of same name and same signature so we have to use interface name before method name to remove this method confiscation let’s see an example:
+
+```C#
 interface testInterface1 {  
     void Show();  
 }  
@@ -463,6 +406,7 @@ class Program {
         Console.ReadLine();  
     }  
 }  
+```
 Output:
 
 
