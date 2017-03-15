@@ -718,3 +718,8 @@ Indexers in C#
 INDEXER in C#
 31. What is multicast delegate in c#?
 
+
+
+<a href=http://www.c-sharpcorner.com/uploadfile/nipuntomar/jit-just-in-time-compiler/>JIT</a>
+
+<a href=http://www.telerik.com/blogs/understanding-net-just-in-time-compilation>.net</a>
