@@ -644,3 +644,8 @@ INDEXER in C#
 <a href=http://www.c-sharpcorner.com/uploadfile/nipuntomar/jit-just-in-time-compiler/>JIT</a>
 
 <a href=http://www.telerik.com/blogs/understanding-net-just-in-time-compilation>.net</a>
+
+Question
+bool [][] array
+length?
+
