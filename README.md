@@ -641,6 +641,13 @@ INDEXER in C#
 
 
 
+
+
+### Why delegate cannot be static?
+[Answer](https://github.com/SatSargsyan/Delegates/blob/master/Delegates/Delegates_explaintation.md)
+
+
+
 <a href=http://www.c-sharpcorner.com/uploadfile/nipuntomar/jit-just-in-time-compiler/>JIT</a>
 
 <a href=http://www.telerik.com/blogs/understanding-net-just-in-time-compilation>.net</a>
